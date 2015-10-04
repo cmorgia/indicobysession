@@ -1,4 +1,5 @@
 from MaKaC.conference import ConferenceHolder
+from indico.util.date_time import format_datetime
 from indico.web.http_api.hooks.event import EventBaseHook
 from indico.web.http_api.hooks.registration import RegistrantFetcher
 from indico.web.http_api.util import get_query_parameter
