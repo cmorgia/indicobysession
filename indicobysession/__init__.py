@@ -2,7 +2,7 @@ from indico.core import signals
 from indico.core.plugins import IndicoPluginBlueprint, IndicoPlugin
 from indico.web.http_api import HTTPAPIHook
 from indicobysession.http_api.hooks.bysession import RegistrantsHook, RegistrantsBySessionHook, RegistrantHook, \
-    RegistrantBySessionHook
+    RegistrantBySessionHook, CheckInHook, SessionCheckInHook
 
 blueprint = IndicoPluginBlueprint('indicobysession', __name__)
 
@@ -22,6 +22,9 @@ class IndicoBySessionPlugin(IndicoPlugin):
 
         self.registerHook(RegistrantsHook)
         self.registerHook(RegistrantsBySessionHook)
+
+        self.registerHook(CheckInHook)
+        self.registerHook(SessionCheckInHook)
 
 
     def registerHook(self,cls):
